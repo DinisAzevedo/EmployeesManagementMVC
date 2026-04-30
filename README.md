@@ -13,3 +13,19 @@ se nao estiver .. docker compose up .. para ativar e instalar as imagens do serv
     3. user: sa
     4. password .. o que está no docker .. que neste momento é Password123!
     5. tipo de sertificação : Optional como nas aulas !!! 
+
+## Como iniciar o projeto e a base de dados (local)
+
+1. Subir o banco (Docker Compose):
+
+```bash
+docker compose up -d
+docker compose ps
+```
+
+2. Restaurar e executar a aplicação (perfil `http` abre em http://localhost:5170):
+
+```bash
+dotnet restore 14530_employes_managment/14530_employees_managment.csproj
+dotnet run --project 14530_employes_managment/14530_employees_managment.csproj --launch-profile http
+```
