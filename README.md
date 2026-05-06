@@ -10,7 +10,7 @@ se nao estiver .. docker compose up .. para ativar e instalar as imagens do serv
 3. como fazer ligação .. na extensao Sql Server.. criar nova conexão  
     1. nome .. qualquer 1
     2. server : 127.0.0.1
-    3. user: sa
+    3. user: sa ( é sempre este )
     4. password .. o que está no docker .. que neste momento é Password123!
     5. tipo de certificação : Optional como nas aulas !!! 
 
@@ -29,6 +29,10 @@ docker compose ps
 dotnet restore 14530_employes_managment/14530_employees_managment.csproj
 dotnet run --project 14530_employes_managment/14530_employees_managment.csproj --launch-profile http
 ```
+3. Migrações:
 
-# add migrations
-# update database
+```bash
+add migrations
+update database
+donet database update
+```
