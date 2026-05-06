@@ -12,7 +12,7 @@ se nao estiver .. docker compose up .. para ativar e instalar as imagens do serv
     2. server : 127.0.0.1
     3. user: sa
     4. password .. o que está no docker .. que neste momento é Password123!
-    5. tipo de sertificação : Optional como nas aulas !!! 
+    5. tipo de certificação : Optional como nas aulas !!! 
 
 ## Como iniciar o projeto e a base de dados (local)
 
@@ -29,3 +29,6 @@ docker compose ps
 dotnet restore 14530_employes_managment/14530_employees_managment.csproj
 dotnet run --project 14530_employes_managment/14530_employees_managment.csproj --launch-profile http
 ```
+
+# add migrations
+# update database
