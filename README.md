@@ -1,6 +1,6 @@
 # 14530_employes_managment
 
-# lisgacao a base de dados
+# ligacao a base de dados
 
 1. verificar nos container se o sql server esta operacional !! 
 se nao estiver .. docker compose up .. para ativar e instalar as imagens do serviço
@@ -28,11 +28,12 @@ docker compose ps
 ```bash
 dotnet restore 14530_employes_managment/14530_employees_managment.csproj
 dotnet run --project 14530_employes_managment/14530_employees_managment.csproj --launch-profile http
+dotnet watch run
 ```
 3. Migrações:
 
 ```bash
 add migrations
 update database
-donet database update
+dotnet database update
 ```
