@@ -8,11 +8,11 @@ se nao estiver .. docker compose up .. para ativar e instalar as imagens do serv
 2. verificar a extensao de SQL Server (mssql) para instalar pacotes como o SSMS 
 
 3. como fazer ligação .. na extensao Sql Server.. criar nova conexão  
-    1. nome .. qualquer 1
+    1. nome: qualquer 1
     2. server : 127.0.0.1
     3. user: sa ( é sempre este )
-    4. password .. o que está no docker .. que neste momento é Password123!
-    5. tipo de certificação : Optional como nas aulas !!! 
+    4. password: o que está no docker (Password123!)
+    5. tipo de certificação: Optional  
 
 ## Como iniciar o projeto e a base de dados (local)
 
