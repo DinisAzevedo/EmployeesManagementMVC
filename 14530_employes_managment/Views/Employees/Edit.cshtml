@@ -4,6 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
+<!-- Formulario de edicao: preserva o id oculto e permite atualizar o registo existente. -->
 <h1>Edit</h1>
 
 <h4>Employee</h4>
@@ -13,11 +14,13 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="id" />
+            <!-- Campos de negocio editaveis. -->
             <div class="form-group">
                 <label asp-for="EmpNo" class="control-label"></label>
                 <input asp-for="EmpNo" class="form-control" />
                 <span asp-validation-for="EmpNo" class="text-danger"></span>
             </div>
+            <!-- Campos de auditoria trazidos no formulario para manter o registo completo. -->
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -95,6 +98,7 @@
     </div>
 </div>
 
+<!-- Regresso rapido para a lista sem salvar mais alteracoes. -->
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

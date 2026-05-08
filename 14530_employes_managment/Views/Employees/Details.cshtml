@@ -4,6 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
+<!-- Pagina somente-leitura para inspecionar todos os campos do empregado. -->
 <h1>Details</h1>
 
 <div>
@@ -102,6 +103,7 @@
         </dd>
     </dl>
 </div>
+<!-- Acoes de navegacao: editar o registo ou voltar para a lista. -->
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
     <a asp-action="Index">Back to List</a>

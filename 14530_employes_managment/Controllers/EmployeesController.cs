@@ -10,6 +10,7 @@ using _14530_employes_managment.Models;
 
 namespace _14530_employes_managment.Controllers
 {
+    // Controlador do CRUD de empregados: lista, detalhe, criar, editar e apagar.
     public class EmployeesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -22,6 +23,7 @@ namespace _14530_employes_managment.Controllers
         // GET: Employees
         public async Task<IActionResult> Index()
         {
+            // Vai buscar todos os registos para preencher a pagina de listagem.
             return View(await _context.Employees.ToListAsync());
         }
 
@@ -33,6 +35,7 @@ namespace _14530_employes_managment.Controllers
                 return NotFound();
             }
 
+            // Procura o empregado pedido e devolve 404 se nao existir.
             var employee = await _context.Employees
                 .FirstOrDefaultAsync(m => m.id == id);
             if (employee == null)
@@ -56,6 +59,7 @@ namespace _14530_employes_managment.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,EmpNo,FirstName,MiddleName,LastName,PhoneNumber,EmailAddress,Country,DateOfBirth,Address,Department,Designation,CreatedById,CreatedOn,ModifiedById,ModifiedOn")] Employee employee)
         {
+            // Auditoria preenchida no servidor para evitar depender do formulario.
             employee.CreatedById = "14530";
             employee.CreatedOn = DateTime.Now;
 
@@ -100,6 +104,7 @@ namespace _14530_employes_managment.Controllers
             {
                 try
                 {
+                    // Atualiza o registo e grava as alteracoes na base de dados.
                     _context.Update(employee);
                     await _context.SaveChangesAsync();
                 }
@@ -142,6 +147,7 @@ namespace _14530_employes_managment.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            // Remove o registo apenas depois da confirmacao do utilizador.
             var employee = await _context.Employees.FindAsync(id);
             if (employee != null)
             {

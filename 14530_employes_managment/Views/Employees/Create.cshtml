@@ -4,6 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
+<!-- Pagina de criacao: o formulario abaixo envia dados para a action Create do controlador. -->
 <h1>Create</h1>
 
 <h4>Employee</h4>
@@ -14,6 +15,7 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+            <!-- Identificacao basica e dados pessoais do empregado. -->
             <div class="row">
 
                 <div class="col-md-6">
@@ -105,6 +107,7 @@
                 </div>
             </div>
 
+            <!-- Submissao do formulario para gravar o novo registo na base de dados. -->
             <div class="form-group mt-3">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

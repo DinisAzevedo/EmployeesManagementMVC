@@ -4,6 +4,7 @@
     ViewData["Title"] = "Delete";
 }
 
+<!-- Confirmacao de eliminacao antes de apagar definitivamente o registo. -->
 <h1>Delete</h1>
 
 <h3>Are you sure you want to delete this?</h3>
@@ -105,6 +106,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="id" />
+        <!-- A submissao chama a action DeleteConfirmed no controlador. -->
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

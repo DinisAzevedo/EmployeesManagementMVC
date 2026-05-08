@@ -62,6 +62,7 @@
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
+        <!-- Cabeca global com a navegacao principal da aplicacao. -->
         <!--begin::Header-->
         <nav class="app-header navbar navbar-expand bg-body">
             <!--begin::Container-->
@@ -122,6 +123,7 @@
             <!--end::Container-->
         </nav>
         <!--end::Header-->
+        <!-- Barra lateral com os atalhos principais do sistema. -->
         <!--begin::Sidebar-->
         <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
             <!--begin::Sidebar Brand-->
@@ -173,6 +175,7 @@
             <!--end::Sidebar Wrapper-->
         </aside>
         <!--end::Sidebar-->
+        <!-- Area principal onde cada view especifica e renderizada. -->
         <!--begin::App Main-->
         <main class="app-main">
             <!--begin::App Content Header-->
@@ -182,6 +185,7 @@
                     <!--begin::Row-->
                     <div class="row">
                         @{
+                            // Ajusta o titulo conforme o controlador ativo para dar contexto ao utilizador.
                             var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "Home";
                             var pageTitle = currentController == "Home" ? "Dashboard" : currentController;
                         }
@@ -211,6 +215,7 @@
             <!--end::App Content-->
         </main>
         <!--end::App Main-->
+        <!-- Rodape global com identificacao do projeto. -->
         <!--begin::Footer-->
         <footer class="app-footer">
             <!--begin::To the end-->

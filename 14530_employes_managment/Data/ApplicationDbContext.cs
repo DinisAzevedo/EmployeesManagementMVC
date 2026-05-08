@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _14530_employes_managment.Data
 {
+    // Contexto central do Entity Framework: liga modelos C# a tabelas SQL Server.
     public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -11,6 +12,7 @@ namespace _14530_employes_managment.Data
         {
         }
 
+        // Tabela principal do modulo de gestao de empregados.
         public DbSet<Employee> Employees { get; set; }
     }
 }
