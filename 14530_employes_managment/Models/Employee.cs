@@ -1,4 +1,6 @@
-﻿namespace _14530_employes_managment.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace _14530_employes_managment.Models
 {
     // Entidade principal do projeto: representa um empregado persistido na base de dados.
     public class Employee: UserActivity
@@ -22,11 +24,13 @@
 
         public required string Country { get; set; }
 
+
         public DateTime DateOfBirth { get; set; }
 
         public required string Address { get; set; }
 
-        public required string Department { get; set; }
+        public Department Department { get; set; }
+
         public required string Designation { get; set; }
 
 

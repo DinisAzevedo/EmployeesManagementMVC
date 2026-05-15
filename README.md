@@ -35,5 +35,7 @@ dotnet watch run
 ```bash
 add migrations
 update database
-dotnet database update
+dotnet database updat
+
+dotnet ef database update1 --project 14530_employes_managment/14530_employees_managment.csproj --startup-project 14530_employes_managment/14530_employees_managment.csproj
 ```

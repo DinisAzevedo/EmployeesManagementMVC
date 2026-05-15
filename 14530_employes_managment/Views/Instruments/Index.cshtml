@@ -1,0 +1,56 @@
+@model IEnumerable<_14530_employes_managment.Models.Instrument>
+
+@{
+    ViewData["Title"] = "Instruments";
+}
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-success">
+        <i class="bi bi-plus-lg me-1"></i> Create New Instrument
+    </a>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h3 class="card-title">Instruments</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.TypeInstrument)</th>
+                    <th>@Html.DisplayNameFor(model => model.InstrumentName)</th>
+                    <th>@Html.DisplayNameFor(model => model.UseStrings)</th>
+                    <th style="width: 80px" class="text-center">Edit</th>
+                    <th style="width: 100px" class="text-center">Details</th>
+                    <th style="width: 100px" class="text-center">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.TypeInstrument)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InstrumentName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UseStrings)</td>
+                        <td class="text-center align-middle">
+                            <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary btn-sm">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                        </td>
+                        <td class="text-center align-middle">
+                            <a asp-action="Details" asp-route-id="@item.id" class="btn btn-info btn-sm text-white">
+                                <i class="bi bi-eye-fill"></i> Details
+                            </a>
+                        </td>
+                        <td class="text-center align-middle">
+                            <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger btn-sm">
+                                <i class="bi bi-trash-fill"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
