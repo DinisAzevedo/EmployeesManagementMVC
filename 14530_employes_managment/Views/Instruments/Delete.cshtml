@@ -16,7 +16,7 @@
         <dt class="col-sm-2">@Html.DisplayNameFor(model => model.InstrumentName)</dt>
         <dd class="col-sm-10">@Html.DisplayFor(model => model.InstrumentName)</dd>
         <dt class="col-sm-2">@Html.DisplayNameFor(model => model.UseStrings)</dt>
-        <dd class="col-sm-10">@Html.DisplayFor(model => model.UseStrings)</dd>
+        <dd class="col-sm-10">@(Model.UseStrings == true ? "Yes" : Model.UseStrings == false ? "No" : "Unknown")</dd>
     </dl>
 
     <form asp-action="Delete">
