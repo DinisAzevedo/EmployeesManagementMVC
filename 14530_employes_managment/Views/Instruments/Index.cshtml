@@ -32,7 +32,7 @@
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.TypeInstrument)</td>
                         <td>@Html.DisplayFor(modelItem => item.InstrumentName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.UseStrings)</td>
+                        <td>@(item.UseStrings == true ? "Yes" : item.UseStrings == false ? "No" : "Unknown")</td>
                         <td class="text-center align-middle">
                             <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary btn-sm">
                                 <i class="bi bi-pencil-square"></i> Edit
