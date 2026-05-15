@@ -2,7 +2,7 @@
 
 namespace _14530_employes_managment.Models
 {
-    // Entidade principal do projeto: representa um empregado persistido na base de dados.
+    // Entidade Employee
     public class Employee: UserActivity
     {
         public int id {  get; set; }
@@ -24,12 +24,11 @@ namespace _14530_employes_managment.Models
 
         public required string Country { get; set; }
 
-
         public DateTime DateOfBirth { get; set; }
 
         public required string Address { get; set; }
 
-        public Department Department { get; set; }
+        public Function Function { get; set; }
 
         public required string Designation { get; set; }
 

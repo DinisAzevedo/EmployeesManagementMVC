@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _14530_employes_managment.Controllers
 {
+    // Controlador do CRUD de instrumentos: lista, detalhe, criar, editar e apagar.
     public class InstrumentsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -14,11 +15,13 @@ namespace _14530_employes_managment.Controllers
             _context = context;
         }
 
+        // GET: Instruments
         public async Task<IActionResult> Index()
         {
             return View(await _context.Instruments.ToListAsync());
         }
 
+        // GET: Instruments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,15 +38,20 @@ namespace _14530_employes_managment.Controllers
             return View(instrument);
         }
 
+        // GET: Instruments/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        // POST: Instruments/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,TypeInstrument,InstrumentName,UseStrings")] Instrument instrument)
         {
+            // Auditoria preenchida no servidor para evitar depender do formulario.
             instrument.CreatedById = "14530";
             instrument.CreatedOn = DateTime.Now;
 
@@ -56,7 +64,8 @@ namespace _14530_employes_managment.Controllers
 
             return View(instrument);
         }
-
+        
+        // GET: Instruments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,6 +82,9 @@ namespace _14530_employes_managment.Controllers
             return View(instrument);
         }
 
+        // POST: Instruments/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,TypeInstrument,InstrumentName,UseStrings")] Instrument instrument)
@@ -84,6 +96,7 @@ namespace _14530_employes_managment.Controllers
 
             if (ModelState.IsValid)
             {
+                // Atualiza o registo e grava as alteracoes na base de dados.
                 var existingInstrument = await _context.Instruments.FindAsync(id);
                 if (existingInstrument == null)
                 {
@@ -103,6 +116,7 @@ namespace _14530_employes_managment.Controllers
             return View(instrument);
         }
 
+        // GET: Instruments/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -119,10 +133,12 @@ namespace _14530_employes_managment.Controllers
             return View(instrument);
         }
 
+        // POST: Instruments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            // Remove o registo apenas depois da confirmacao do utilizador.
             var instrument = await _context.Instruments.FindAsync(id);
             if (instrument != null)
             {

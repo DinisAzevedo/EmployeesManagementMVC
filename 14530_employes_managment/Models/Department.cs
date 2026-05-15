@@ -1,6 +1,7 @@
 namespace _14530_employes_managment.Models
 {
-    public enum Department
+    // Enum para representar os departamentos dos empregados, usado na entidade Employee
+    public enum Function
     {
         Administration,
         Engineer,

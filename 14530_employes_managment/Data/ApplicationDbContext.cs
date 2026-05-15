@@ -19,13 +19,13 @@ namespace _14530_employes_managment.Data
 
             modelBuilder.Entity<Employee>(entity =>
             {
-                entity.Property(e => e.Department)
+                entity.Property(e => e.Function)
                     .HasConversion<string>()
                     .HasMaxLength(32);
 
                 entity.ToTable(t => t.HasCheckConstraint(
-                    "CK_Employees_Department",
-                    "[Department] IN ('Administration','Engineer','Worker')"));
+                    "CK_Employees_Function",
+                    "[Function] IN ('Administration','Engineer','Worker')"));
             });
 
             modelBuilder.Entity<Instrument>(entity =>

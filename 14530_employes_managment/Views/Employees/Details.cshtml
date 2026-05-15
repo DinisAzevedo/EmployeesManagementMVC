@@ -66,10 +66,10 @@
             @Html.DisplayFor(model => model.Address)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department)
+            @Html.DisplayNameFor(model => model.Function)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department)
+            @Html.DisplayFor(model => model.Function)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Designation)
@@ -103,7 +103,7 @@
         </dd>
     </dl>
 </div>
-<!-- Acoes de navegacao: editar o registo ou voltar para a lista. -->
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
     <a asp-action="Index">Back to List</a>

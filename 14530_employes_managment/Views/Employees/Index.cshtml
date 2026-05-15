@@ -45,7 +45,7 @@
                         @Html.DisplayNameFor(model => model.DateOfBirth)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Department)
+                        @Html.DisplayNameFor(model => model.Function)
                     </th>
                     <th style="width: 80px" class="text-center">Edit</th>
                     <th style="width: 100px" class="text-center">Details</th>
@@ -80,7 +80,7 @@
                         @Html.DisplayFor(modelItem => item.DateOfBirth)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Department)
+                        @Html.DisplayFor(modelItem => item.Function)
                     </td>
                     <td class="text-center align-middle">
                         <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary btn-sm">
